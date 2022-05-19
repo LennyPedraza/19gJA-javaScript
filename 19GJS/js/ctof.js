@@ -6,4 +6,11 @@ let gradosCelsius = prompt ('Digita los grados celsius que se encuentra en tu lo
 
 let gradosF = gradosCelsius * 9/5 + 32
 
-console.log( gradosF)
+window.alert('la temperatura actual es de'+ gradosF);
+
+
+
+let celsius  = prompt ('temperatura actual ', 23)
+
+if (celsius == null ) {console.log('temperatura incorrecta')}
+else{let }
