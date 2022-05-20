@@ -6,3 +6,9 @@
 // .substring(start,end)
 // .slice(start,end)
 // .includes(searchElement, fromIndex)
+
+const str = 'Learn string method'
+
+let result = str.indexOf('e')
+
+console.log(result)
