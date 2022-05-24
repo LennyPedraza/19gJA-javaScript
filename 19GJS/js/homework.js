@@ -7,28 +7,17 @@
  */
 
 
-// let i = 1
-// let a = 0
-// let b = 0
-// let c = 0
+let a = 0
+
 //  metodo for
-// for(let i = 1 ; i <= 100 ; i++){
-//     if(i % 3 === 0){
-//         a += i  
-//     }
-//     if(i % 5 === 0){
-      
-//         b += i  
-//     }
-//     if(i % 7 === 0){
-      
-//         c += i      
-//     }    
-// }
-// console.log(`La suma de los multiplos del 3 es: ${a}`)
-// console.log(`La suma de los multiplos del 5 es: ${b}`)
-// console.log(`La suma de los multiplos del 7 es: ${c}`)
-// console.log(`La suma de los multiplos del 3, 5 y 7 es: ${a+b+c}`)
+for(let i = 1 ; i <= 100 ; i++){
+    if(i % 3 === 0
+        ||i % 5 === 0
+        || i % 7 === 0 )
+        {
+        a += i }  
+}
+console.log(`La suma de los multiplos del 3, 5 y 7 es: ${a}`)
 
 //metodo while
 //  while( i <= 100){
