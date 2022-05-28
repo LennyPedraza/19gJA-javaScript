@@ -103,6 +103,7 @@ const capitalize = (str) => {
         const lower = element.toLowerCase();
         let strCap = element.charAt(0).toUpperCase() + lower.slice(1);
         arr.push(strCap)
+        
 
     });
     return arr
