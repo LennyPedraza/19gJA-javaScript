@@ -64,21 +64,21 @@
  * capitalizeNames( ['jorge','lUis', 'marcOs', 'mario'] )
  * -> ['Jorge','Luis', 'Marcos', 'Mario']
  */
- let arr = ['jorge','lUis', 'marcOs', 'mario']
+//  let arr = ['jorge','lUis', 'marcOs', 'mario']
 
 
-const capitalizeNames = (arr) => {
-  let resultado = []
+// const capitalizeNames = (arr) => {
+//   let resultado = []
 
-    resultado = arr.reduce((acc, cv, currentIndex, array)=>
-    {
-      acc.push(`${cv[0].toUpperCase()}${cv.slice(1).toLowerCase()}`) 
-      return acc
+//     resultado = arr.reduce((acc, cv, currentIndex, array)=>
+//     {
+//       acc.push(`${cv[0].toUpperCase()}${cv.slice(1).toLowerCase()}`) 
+//       return acc
 
-     },[])   
-     return resultado
-}
-console.log(capitalizeNames(arr))
+//      },[])   
+//      return resultado
+// }
+// console.log(capitalizeNames(arr))
 
 
 /**
@@ -88,12 +88,20 @@ console.log(capitalizeNames(arr))
  * -> [2,4]
  */
 
-let numbers =[1,2,3,4,5,6,7,8]
+let numbers =[6]
 const isEven = (numbers) =>{
   let filterEvens = numbers.reduce((acc,elemento) =>{
-      if (elemento % 2 === 0 ){ return [elemento]}
+      if (elemento % 2 === 0 ){ 
+         acc.push(elemento)
+      return acc 
+    
+    } else 
+      {
+        return acc
+      }
     } 
   ,[])
+
   return filterEvens
 }
 console.log(isEven(numbers))
@@ -105,6 +113,16 @@ console.log(isEven(numbers))
  * -> 42
  */
 
+// let allNumbers = [ 1, -4, 12, 0, -3, 29, -150] 
+
+// const sumPositives = (allNumbers) =>{
+//   let addAllPositives  = allNumbers.reduce ((cv)=> {
+//     if(cv > 0 ){
+//       return cv
+//     }  
+//   },[])
+
+// }
 
 /**
  * 4. Estudiar Objetos y métodos de objetos
