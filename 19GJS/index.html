@@ -11,21 +11,22 @@
     <h1 class="title" id ="title">
         My Header 
     </h1>
- 
-    <!-- tabla -->
-<table>
-    <thead>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Generacion</th>
-    </thead>
-    <tbody>
+ <button onclick="clickBoton()">click me</button>
+ <button onclick="clickBoton()">click me</button>
 
-    </tbody>
-</table>
+  <input type="number" id="myInput" name="quantity" min="2" max="5" required>
+
+  <script>
+    document.getElementById("myInput").addEventListener("invalid", myFunction);
+    
+    function myFunction() {
+      alert("You must pick a number between 2 and 5. You chose: " + this.value);
+    }
+    </script>
 
 
 
-    <script src="/19GJS/js/homeworDom.js"></script>
+
+    <script src="/19GJS/js/domEvents.js"></script>
 </body>
 </html>
