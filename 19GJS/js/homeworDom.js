@@ -95,22 +95,21 @@ document.querySelector('body').appendChild(listName)
  * 
  */
 
-let tbody = document.querySelector('tbody')
-koders.forEach((koder,index,arr)=>{
-    // console.log(koder.name)
-    // console.log(koder.edad)
-    // console.log(koder.generation)
-    let tr = document.createElement('td')
-    let tdName = document.createElement('td')
-    tdName.textContent=koder.name
-    tr.appendChild(tdName)
-    let tdAge = document.createElement('td')
-    tdAge.textContent=koder.age
-    tr.appendChild(tdAge)
-    let tdGen = document.createElement('td')
-    tdGen.textContent=koder.generation
-    tr.appendChild(tdGen)
-    tbody.appendChild(tr)
-})
-
-console.log(tbody)
+ let tbody = document.querySelector('tbody')
+ koders.forEach( (koder, index, arr) => {
+ 
+     let tr = document.createElement('tr')
+     let tdName = document.createElement('td')
+     tdName.textContent = koder.name
+     tr.appendChild(tdName)
+     let tdAge = document.createElement('td')
+     tdAge.textContent = koder.age
+     tr.appendChild(tdAge)
+     let tdGen = document.createElement('td')
+     tdGen.textContent = koder.generation
+     tr.appendChild(tdGen)
+     console.log(tr)
+     tbody.appendChild(tr)
+     
+ })
+ 
