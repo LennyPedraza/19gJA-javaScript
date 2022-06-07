@@ -88,23 +88,23 @@
  * -> [2,4]
  */
 
-let numbers =[6]
-const isEven = (numbers) =>{
-  let filterEvens = numbers.reduce((acc,elemento) =>{
-      if (elemento % 2 === 0 ){ 
-         acc.push(elemento)
-      return acc 
+// let numbers =[6]
+// const isEven = (numbers) =>{
+//   let filterEvens = numbers.reduce((acc,elemento) =>{
+//       if (elemento % 2 === 0 ){ 
+//          acc.push(elemento)
+//       return acc 
     
-    } else 
-      {
-        return acc
-      }
-    } 
-  ,[])
+//     } else 
+//       {
+//         return acc
+//       }
+//     } 
+//   ,[])
 
-  return filterEvens
-}
-console.log(isEven(numbers))
+//   return filterEvens
+// }
+// console.log(isEven(numbers))
 
 /**
  * 3. funcion con .reduce()
