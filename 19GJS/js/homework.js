@@ -1,4 +1,11 @@
-
+/**
+ * Ejercicio 2
+ * Generar una funcion que reciba como parametro un string
+ * y filtre solo los objetos que 
+ * tengan en el name, username o email dicho string
+ * .filter()
+ * .forEach()
+ */
 
  let users = [
     {
@@ -325,15 +332,8 @@
     }
   ]
   
-  /**
- * Ejercicio 2
- * Generar una funcion que reciba como parametro un string
- * y filtre solo los objetos que 
- * tengan en el name, username o email dicho string
- * .filter()
- * .forEach()
- */
-   const filterUsers = ( strToFilter ) => {
+  
+  const filterUsers = ( strToFilter ) => {
     strToFilter = strToFilter.toLowerCase()
     let filteredUsers = users.filter( (user) => {
       if(
@@ -347,13 +347,28 @@
     return filteredUsers
   }
   
+  const printUserList = (usersFiltered) => {
+    let allUserLayout = usersFiltered.reduce((acc, user, idx, arr) => {
+      return acc += `
+      <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">${user.name}</h5>
+        </div>
+        <p class="mb-1">${user.phone}</p>
+        <small>${user.email}</small>
+      </a>
+      `
+    }, '')
   
-  // let inputSearch = document.getElementById('filter__user')
-  // let btnbuscar = document.getElementById('btnbuscar')
-  // btnbuscar.addEventListener('click', () => {
-    
+    document.getElementById('users__filtered').innerHTML = allUserLayout
+  }
+  
+  
+  // cuando cargue la pagina, cargar todos los usuarios
+  document.addEventListener('DOMContentLoaded',  printUserList(users) )
+  
   let inputSearch = document.getElementById('filter__user')
-  inputSearch.addEventListener('keyup', () => {
+  inputSearch.addEventListener('change', () => {
     // obtener el valor a buscar
     let searchTerm = inputSearch.value
     // Filtrar los usuarios
@@ -361,17 +376,16 @@
     // imprimirlos en consola
     console.log(usersFiltrados)
     // agregarlos al layout en #lista__users
-    // pintar name, phone, email
+    printUserList(usersFiltrados)
   })
-
-
-
-//   const filterUsers = ( strToFilter ) => {
-
-//     console.log(strToFilter)
-//     return users.filter( ( user ) => {
-//         return user.name.toLowerCase().match(strToFilter.toLowerCase()  ) || 
-//                 user.username.toLowerCase().match(strToFilter.toLowerCase()  ) || 
-//                 user.email.toLowerCase().match(strToFilter.toLowerCase()  )
-//     })
-//   }
+  
+  // blur
+  // click
+  // keyup
+  // DOMContentLoaded
+  // focus
+  // change
+  
+  
+  
+  
