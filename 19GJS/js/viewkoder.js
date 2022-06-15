@@ -1,42 +1,41 @@
-//url
-
-//window.location.search
-//?koderkey=-djsfjfpdsgkgd´s"
-
-let idkoder = window.location.search.substring(10)
+/// url 
+// http://127.0.0.1:5500/interior.html?koderkey=-N4TJNibKM9OvZbWSB_R
 
 
-// 1.- hacer una petición al server
+// window.location.search
+// "?koderkey=-N4TJNibKM9OvZbWSB_R"
+//  
 
+let idKoder = window.location.search.substring(10)
+console.log(idKoder)
+
+// Hacer una peticion al server
+
+// crear conexion
 const xhttp = new XMLHttpRequest()
-xhttp.open( 'GET', `https://koders19gjs-default-rtdb.firebaseio.com/koders/.json`, true)
+xhttp.open( 'GET', `https://koders19gjs-default-rtdb.firebaseio.com/koders/${idKoder}/.json`, true)
 xhttp.onload = function(data) {
     if(data.target.status >= 200 && data.target.status <= 399){
+
         let response = JSON.parse(data.target.response)
-        // bloque de codigo
+        let { name, age, biography, bootcamp } = response
 
-        let template = ''
-
-            let {name, age, biography, bootcamp} = koders[key]
-            console.log(koders[key])
-            template += `
-            <div class="col-12 col-sm-6">
-            <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">${name} ${age}</h5>
-                <p class="card-text">${biography.slice(0,20)}</p>
-                <p class="card-text">${bootcamp}</p>
-                <a href="/interior.html?koderkey=${key}" class="btn btn-link">ver koder</a>
+        let template = `
+                <div class="col-12 col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${name} ${age} años</h5>
+                    <p class="card-text">${biography.slice(0, 20)}...</p>
+                    <p class="card-text">${bootcamp}</p>
+                    <a href="index.html" class="btn btn-link">Ver todos los koders</a>
+                </div>
+                </div>
             </div>
-            </div>
-             </div>`
-
-        console.log('imprimir todos los koders')
-
-        document.querySelector('.wrap__Koder').innerHTML = template
+        `
+        document.querySelector('.wrap__koder').innerHTML = template
     }
 }
+xhttp.send()
 
 // cuando el response este listo
-//pintar la información del koder en un card
-
+// pintar la informacion del koder en un card
